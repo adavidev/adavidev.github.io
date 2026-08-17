@@ -6,4 +6,4 @@ Software since 2011.
 
 - [MVTHRSYS](https://adavidev.github.io/demos/mvthrsys/) — terminal runtime: JSON screens, device controls, CLI, SSE
 - [Arnauts](https://adavidev.github.io/demos/arnauts/) — ship topology and crew pathfinding
-- [Walkmode](https://adavidev.github.io/demos/walkmode/) — walking routes that contour hills using elevation
+- [Walkmode](https://adavidev.github.io/demos/walkmode/) — walking routes that contour hills, skip buildings, and keep away from pins you drop
