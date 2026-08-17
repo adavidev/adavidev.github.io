@@ -6,7 +6,7 @@
     <title>Alan Davis — adavidev</title>
     <meta
       name="description"
-      content="Alan Davis. Walkmode: hill-aware walking routes. Arnauts: a crew sim in the browser."
+      content="Alan Davis. Walkmode, Arnauts, and MVTHRSYS — live in the browser."
     />
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,6 +23,7 @@
       <nav>
         <a href="#walkmode">Walkmode</a>
         <a href="#arnauts">Arnauts</a>
+        <a href="#mvthrsys">MVTHRSYS</a>
         <a href="https://github.com/adavidev">GitHub</a>
       </nav>
     </header>
@@ -30,11 +31,11 @@
     <section class="hero">
       <div class="hero-copy">
         <p class="eyebrow">Alan Davis · since 2012</p>
-        <h1>Things you can walk.<br />Things you can crew.</h1>
+        <h1>Things you can walk.<br />Things you can crew.<br />Things you can boot.</h1>
         <p class="deck">
-          Two browser demos. One ignores roads and routes around hills using
-          elevation. The other is a small ship with a crew that pathfinds
-          through hull and corridor.
+          Three browser demos. Hill-aware walking routes. A ship with a crew
+          that pathfinds. And MVTHRSYS — a JSON-driven terminal UI with the
+          shipped Examples page.
         </p>
         <div class="hero-actions">
           <a class="btn" href="#walkmode">See the work</a>
@@ -117,6 +118,31 @@
         <iframe
           title="Arnauts live demo"
           src="./demos/arnauts/"
+          loading="lazy"
+        ></iframe>
+      </div>
+    </article>
+
+    <article class="project" id="mvthrsys">
+      <div class="project-meta">
+        <p class="index">03</p>
+        <h2>MVTHRSYS</h2>
+        <p class="lede">
+          JSON-driven terminal UI. This is the shipped Examples screen: CRT
+          stack of typed blocks, links out to Grill32 / VR / movies / games /
+          beats. Private source; this is the public client.
+        </p>
+        <ul>
+          <li>React · Redux · webpack</li>
+          <li>Screens are JSON, not hardcoded pages</li>
+          <li>Starts on Examples.json</li>
+        </ul>
+        <a class="btn" href="./demos/mvthrsys/">Open Examples</a>
+      </div>
+      <div class="project-frame crt">
+        <iframe
+          title="MVTHRSYS Examples"
+          src="./demos/mvthrsys/"
           loading="lazy"
         ></iframe>
       </div>

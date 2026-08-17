@@ -1,0 +1,43 @@
+{
+  "config": {
+    "name": "Workstation1",
+    "styles": {
+      "color": "#39c7ff",
+      "backgroundColor": "#0d1c1c",
+      "font": "Apricot"
+    },
+    "preloadMemory": {
+      "users": [
+        {"username": "sverhoeven@87DF", "password": "R1pL3y!", "securityLevel": "admin"},
+        {"username": "asingh@A0Y3", "password": "0v3rC0ff33", "securityLevel": "employee"},
+        {"username": "dbeers@33CF", "password": "Fl1rtyD1v@", "securityLevel": "employee"},
+        {"username": "jchatzkel@00A1", "password": "B1gB00t!3$", "securityLevel": "employee"},
+        {"username": "rtobin@00A9", "password": "N3bul@H@ul", "securityLevel": "employee"},
+        {"username": "mradimir@0A06", "password": "G3@r$h1ft3r", "securityLevel": "employee"},
+        {"username": "kkantaro@157D", "password": "R0ughn3ck$", "securityLevel": "employee"},
+        {"username": "mbowe@4CF5", "password": "W3yland-YuT@n!", "securityLevel": "employee"},
+        {"username": "employee", "password": "employee", "securityLevel": "employee"},
+        {"username": "guest", "password": "guest", "securityLevel": "guest"}
+      ]
+    }
+  },
+  "pages": [
+    {
+      "id": "main",
+      "type": "screen",
+      "content": [
+        {
+          "type": "iframe",
+          "target": "sdfile/testStrudel.html"
+        },
+        { 
+          "text": "> Back to Terminal32", 
+          "type": "externallink", 
+          "target": "Terminal32"
+        }
+      ]
+    }
+  ],
+  "dialogs": [
+  ]
+}

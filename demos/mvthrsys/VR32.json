@@ -1,0 +1,87 @@
+{
+  "config": {
+    "name": "Workstation1",
+    "styles": {
+      "color": "#39c7ff",
+      "backgroundColor": "#0d1c1c",
+      "font": "Apricot"
+    },
+    "preloadMemory": {
+      "users": [
+        {"username": "admin", "password": "admin", "securityLevel": "admin"},
+        {"username": "guest", "password": "guest", "securityLevel": "guest"}
+      ]
+    }
+  },
+  "pages": [
+    {
+      "id": "menu",
+      "type": "screen",
+      "content": [
+        {
+          "type": "links",
+          "text": "> Test Scene",
+          "target": "testaframe"
+        },
+        {
+          "type": "links",
+          "text": "> Passthrough Test",
+          "target": "example1"
+        },
+        {
+          "type": "links",
+          "text": "> Aframe Responsive Demo",
+          "target": "example2"
+        }
+      ]
+    },
+    {
+      "id": "testaframe",
+      "type": "screen",
+      "content": [
+        {
+          "type": "iframe",
+          "html_": "<h1>IFrame is working!</h1",
+          "target": "sdfile/aframetest.html"
+        },
+        {
+          "type": "links",
+          "text": "> Back",
+          "target": "menu"
+        }
+      ]
+    },
+    {
+      "id": "example1",
+      "type": "screen",
+      "content": [
+        {
+          "type": "iframe",
+          "target": "sdfile/aframexrtest.html"
+        },
+        {
+          "type": "links",
+          "text": "> Back",
+          "target": "menu"
+        }
+      ]
+    },
+    {
+      "id": "example2",
+      "type": "screen",
+      "content": [
+        {
+          "type": "iframe",
+          "target": "sdfile/aframeResponsive.html"
+        },
+        {
+          "type": "links",
+          "text": "> Back",
+          "target": "menu"
+        }
+      ]
+    }
+  ],
+  "dialogs": [
+  ]
+}

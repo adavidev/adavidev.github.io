@@ -1,0 +1,109 @@
+{
+  "config": {
+    "name": "Terminal32",
+    "styles": {
+      "color": "#a9fe9d",
+      "alertColor": "red",
+      "backgroundColor": "#0f1c0d",
+      "font": "Apricot"
+    },
+    "preloadMemory": {
+      "users": [
+        {"username": "admin", "password": "admin", "securityLevel": "admin"},
+        {"username": "employee", "password": "employee", "securityLevel": "employee"},
+        {"username": "guest", "password": "guest", "securityLevel": "guest"}
+      ]
+    }
+  },
+  "pages": [
+    {
+      "id": "menu",
+      "type": "screen",
+      "content": [
+        "Terminal Menu",
+        "=========",
+        "",
+        { 
+          "text": "> GO TO EXAMPLES MENU", 
+          "type": "externallink", 
+          "target": "Examples"
+        },
+        {
+          "type": "links",
+          "text": "> LOG IN",
+          "target": "login"
+        },
+        {
+          "type": "linkif",
+          "text": "> OTA Updates",
+          "target": "otamenu",
+          "value": "securityLevel",
+          "equals": ["admin"]
+        },
+        { 
+          "type": "externallinkif", 
+          "text": "> TESTS", 
+          "target": "Test32",
+          "value": "securityLevel",
+          "equals": ["admin"]
+        }
+      ]
+    },
+    {
+      "id": "otamenu",
+      "type": "screen",
+      "content": [
+        "OTA Updates",
+        "=========",
+        "",
+        { 
+          "type": "otaform"
+        }
+      ]
+    },
+    {
+      "id": "login",
+      "type": "screen",
+      "content": [          "Login",
+        "=========",
+        "",
+        { "text": "Enter Credentials Below", "type": "inline-alert"},
+        "Input username: ",
+        { "memoryName": "username", "type": "input"},
+        "Input password: ",
+        { "memoryName": "password", "type": "input"},
+        {
+          "type": "goif",
+          "against": "users",
+          "values": ["username", "password"],
+          "passCue": "menu",
+          "failCue": "retryLogin",
+          "memoryName": "securityLevel"
+        }
+      ]
+    },
+    {
+      "id": "retryLogin",
+      "type": "screen",
+      "content": [
+        {"text": "Invalid username or password. Please try again.", "type": "inline-alert"},
+        "Use name and password 'guest' if unregistered.",
+        "Input username: ",
+        { "memoryName": "username", "type": "input"},
+        "Input password: ",
+        { "memoryName": "password", "type": "input"},
+        {
+          "type": "goif",
+          "against": "users",
+          "values": ["username", "password"],
+          "passCue": "menu",
+          "failCue": "retryLogin",
+          "memoryName": "securityLevel"
+        }
+        
+      ]
+    }
+  ],
+  "dialogs": [
+  ]
+}

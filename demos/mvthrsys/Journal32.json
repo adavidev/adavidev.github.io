@@ -1,0 +1,32 @@
+{
+  "config": {
+    "name": "Journal32",
+    "styles": {
+      "color": "#a9fe9d",
+      "alertColor": "red",
+      "backgroundColor": "#0f1c0d",
+      "font": "Apricot"
+    },
+    "preloadMemory": {
+      "users": [
+        {"username": "admin", "password": "admin", "securityLevel": "admin"},
+        {"username": "employee", "password": "employee", "securityLevel": "employee"},
+        {"username": "guest", "password": "guest", "securityLevel": "guest"}
+      ]
+    }
+  },
+  "pages": [
+    {
+      "id": "page",
+      "type": "screen",
+      "content": [
+        {
+          "type": "journal",
+          "text": "Sawtooth Funk dlafkjhsdflk ashflsakjfh asdfljkh dsalkashf laksdfhlaksdfh alsdkfh asdlfkh dslfkh dsalfkahsd lfkjasdh fladkshf alskdjfhasldkjfh asdflkjh asdflkjsha dflkasjdh flaskdjfh asdlkjfh dsalfkh asdlfkjhsadflkjh dsf. dlkhfdalkfh, Sawtooth Funk dlafkjhsdflk ashflsakjfh asdfljkh dsalkashf laksdfhlaksdfh alsdkfh asdlfkh dslfkh dsalfkahsd lfkjasdh fladkshf alskdjfhasldkjfh asdflkjh asdflkjsha dflkasjdh flaskdjfh asdlkjfh dsalfkh asdlfkjhsadflkjh dsf. dlkhfdalkfhSawtooth Funk dlafkjhsdflk ashflsakjfh asdfljkh dsalkashf laksdfhlaksdfh alsdkfh asdlfkh dslfkh dsalfkahsd lfkjasdh fladkshf alskdjfhasldkjfh asdflkjh asdflkjsha dflkasjdh flaskdjfh asdlkjfh dsalfkh asdlfkjhsadflkjh dsf. dlkhfdalkfh,  Sawtooth Funk dlafkjhsdflk ashflsakjfh asdfljkh dsalkashf laksdfhlaksdfh alsdkfh asdlfkh dslfkh dsalfkahsd lfkjasdh fladkshf alskdjfhasldkjfh asdflkjh asdflkjsha dflkasjdh flaskdjfh asdlkjfh dsalfkh asdlfkjhsadflkjh dsf. dlkhfdalkfhSawtooth Funk dlafkjhsdflk ashflsakjfh asdfljkh dsalkashf laksdfhlaksdfh alsdkfh asdlfkh dslfkh dsalfkahsd lfkjasdh fladkshf alskdjfhasldkjfh asdflkjh asdflkjsha dflkasjdh flaskdjfh asdlkjfh dsalfkh asdlfkjhsadflkjh dsf. dlkhfdalkfh, Sawtooth Funk dlafkjhsdflk ashflsakjfh asdfljkh dsalkashf laksdfhlaksdfh alsdkfh asdlfkh dslfkh dsalfkahsd lfkjasdh fladkshf alskdjfhasldkjfh asdflkjh asdflkjsha dflkasjdh flaskdjfh asdlkjfh dsalfkh asdlfkjhsadflkjh dsf. dlkhfdalkfh"
+        }
+      ]
+    }
+  ],
+  "dialogs": [
+  ]
+}

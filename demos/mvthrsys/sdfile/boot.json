@@ -1,0 +1,43 @@
+{
+  "config": {
+    "name": "Alan32",
+    "styles": {
+      "color": "#a9fe9d",
+      "backgroundColor": "#0f1c0d",
+      "font": "Apricot"
+    },
+    "preloadMemory": {
+      "users": [
+        {"username": "admin", "password": "admin", "securityLevel": "admin"},
+        {"username": "employee", "password": "employee", "securityLevel": "employee"},
+        {"username": "guest", "password": "guest", "securityLevel": "guest"}
+      ]
+    }
+  },
+  "pages": [
+    {
+      "id": "menu",
+      "type": "screen",
+      "content": [
+        "Alan32",
+        "=========",
+        "",
+        {
+          "type": "image",
+          "src": "alan_profile.jpeg",
+          "className": "lighten"
+        },
+        "- Experienced Fullstack and IoT Developer",
+        "- 3D modelling and device prototyping",
+        "- Barista",
+        { 
+          "text": "> Device Menu", 
+          "type": "externallink", 
+          "target": "Terminal32"
+        }
+      ]
+    }
+  ],
+  "dialogs": [
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "config": {
+    "name": "Movie32",
+    "styles": {
+      "color": "#a9fe9d",
+      "backgroundColor": "#0f1c0d",
+      "font": "Apricot"
+    },
+    "preloadMemory": {
+      "users": [
+        {"username": "admin", "password": "admin", "securityLevel": "admin"},
+        {"username": "employee", "password": "employee", "securityLevel": "employee"},
+        {"username": "guest", "password": "guest", "securityLevel": "guest"}
+      ]
+    }
+  },
+  "pages": [
+    {
+      "id": "menu",
+      "type": "screen",
+      "content": [
+        "Movie32",
+        "=========",
+        "",
+        { 
+          "text": "> Watch Test Movie 1", 
+          "type": "links", 
+          "target": "video1" 
+        },
+        { 
+          "text": "> Back to Terminal32", 
+          "type": "externallink", 
+          "target": "Terminal32"
+        }
+      ]
+    },
+    {
+      "id": "video1",
+      "type": "screen",
+      "content": [
+        {
+          "type": "loadscript",
+          "src": "video-js.min.css"
+        },
+        {
+          "type": "loadscript",
+          "src": "video.min.js"
+        },
+        { 
+          "text": "> Watch Video", 
+          "type": "videoplayer", 
+          "target": "testvid.mp4" 
+        }
+      ]
+    }
+  ],
+  "dialogs": [
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "config": {
+    "name": "DrippyBits",
+    "styles": {
+      "color": "#a9fe9d",
+      "backgroundColor": "#0f1c0d",
+      "font": "Apricot"
+    },
+    "preloadMemory": {
+      "users": [
+        {"username": "admin", "password": "admin", "securityLevel": "admin"},
+        {"username": "employee", "password": "employee", "securityLevel": "employee"},
+        {"username": "guest", "password": "guest", "securityLevel": "guest"}
+      ]
+    }
+  },
+  "pages": [
+    {
+      "id": "menu",
+      "type": "screen",
+      "content": [
+        "DrippyBits",
+        "=========",
+        "",
+        "- Experienced Fullstack and IoT Developer",
+        "- 3D modelling, device prototyping, APIs, and more!",
+        "- Also, I can make coffee!",
+        {
+          "type": "image",
+          "src": "Avatar.png"
+        },
+        { 
+          "text": "> Device Menu", 
+          "type": "externallink", 
+          "target": "Terminal32"
+        }
+      ]
+    }
+  ],
+  "dialogs": [
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "config": {
+    "name": "ApiLEDToggle",
+    "styles": {
+      "color": "#a9fe9d",
+      "backgroundColor": "#0f1c0d",
+      "font": "Apricot"
+    },
+    "preloadMemory": {
+      "users": [
+        {"username": "admin", "password": "admin", "securityLevel": "admin"},
+        {"username": "employee", "password": "employee", "securityLevel": "employee"},
+        {"username": "guest", "password": "guest", "securityLevel": "guest"}
+      ]
+    }
+  },
+  "pages": [
+    {
+      "id": "menu",
+      "type": "screen",
+      "content": [
+        "Main Menu",
+        "=========",
+        "",
+        {
+          "type": "toggle",
+          "memoryName": "dummyStatus",
+          "text": "> TestToggle :: ",
+          "states": [
+            "OFF",
+            "ON"
+          ]
+        },
+        {
+          "type": "api-toggle",
+          "memoryName": "lightStatus",
+          "apiUrl": "/api/set_pin",
+          "apiMethod": "GET",
+          "apiBody": {
+            "pin": 26,
+            "status": "{lightStatus}"
+          },
+          "text": "> BOARD LED :: ",
+          "states": [
+            "OFF",
+            "ON"
+          ]
+        },
+        {
+          "type": "api-toggle",
+          "memoryName": "lightStatus1",
+          "apiUrl": "/api/set_pin",
+          "apiMethod": "GET",
+          "apiBody": {
+            "pin": 25,
+            "status": "{lightStatus1}"
+          },
+          "text": "> BOARD LED 2 :: ",
+          "states": [
+            "OFF",
+            "ON"
+          ]
+        },
+        { "text": "> LOG OUT", "type": "links", "target": "login" },
+        { 
+          "text": "> EXIT TO TERMINAL32", 
+          "type": "externallink", 
+          "target": "Terminal32"
+        }
+      ]
+    },
+    {
+      "id": "login",
+      "type": "screen",
+      "content": [
+        "IoT Login",
+        "=========",
+        "",
+        { "text": "Enter Credentials Below", "type": "inline-alert"},
+        "Input username: ",
+        { "memoryName": "username", "type": "input"},
+        "Input password: ",
+        { "memoryName": "password", "type": "input"},
+        {
+          "type": "goif",
+          "against": "users",
+          "values": ["username", "password"],
+          "passCue": "menu",
+          "failCue": "retryLogin",
+          "memoryName": "securityLevel"
+        }
+      ]
+    },
+    {
+      "id": "retryLogin",
+      "type": "screen",
+      "content": [
+        {"text": "Invalid username or password. Please try again.", "type": "inline-alert"},
+        "Input username: ",
+        { "memoryName": "username", "type": "input"},
+        "Input password: ",
+        { "memoryName": "password", "type": "input"},
+        {
+          "type": "goif",
+          "against": "users",
+          "values": ["username", "password"],
+          "passCue": "menu",
+          "failCue": "retryLogin",
+          "memoryName": "securityLevel"
+        }
+        
+      ]
+    }
+  ],
+  "dialogs": []
+}

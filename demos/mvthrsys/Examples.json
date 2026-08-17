@@ -1,0 +1,316 @@
+{
+  "config": {
+    "name": "Examples",
+    "styles": {
+      "color": "#a9fe9d",
+      "backgroundColor": "#0f1c0d",
+      "font": "Apricot"
+    },
+    "preloadMemory": {
+      "users": [
+        {"username": "admin", "password": "admin", "securityLevel": "admin"},
+        {"username": "employee", "password": "employee", "securityLevel": "employee"},
+        {"username": "guest", "password": "guest", "securityLevel": "guest"}
+      ]
+    }
+  },
+  "pages": [
+    {
+      "id": "menu",
+      "type": "screen",
+      "content": [
+        "Main Menu",
+        "=========",
+        "",
+        {
+          "text": "> UI COMPONENTS",
+          "type": "links",
+          "target": "uicomponents"
+        },
+        { 
+          "text": "> GRILL32", 
+          "type": "externallink", 
+          "target": "Grill32",
+          "value": "securityLevel",
+          "equals": ["admin"]
+        },
+        { 
+          "text": "> VR EXAMPLES", 
+          "type": "externallink", 
+          "target": "VR32"
+        },
+        { 
+          "text": "> MOVIES", 
+          "type": "externallink", 
+          "target": "Movie32"
+        },
+        { 
+          "text": "> GAMES", 
+          "type": "externallink", 
+          "target": "Game32"
+        },
+        { 
+          "text": "> MUSIC",
+          "type": "externallink", 
+          "target": "Music32"
+        },
+        { 
+          "text": "> DOUBLE PANE RENDERER", 
+          "type": "externallink", 
+          "target": "DoublePanel"
+        },
+        {
+          "text": "> BEATS",
+          "type": "links",
+          "target": "beatpage"
+        },
+        {
+          "text": "> BEAT RADIO (once)",
+          "type": "links",
+          "target": "beatradio"
+        },
+        {
+          "text": "> CliSSE",
+          "type": "links",
+          "target": "clipage"
+        },
+        {
+          "text": "> MVTHR",
+          "type": "linkif",
+          "target": "motherPage",
+          "value": "securityLevel",
+          "equals": ["admin"]
+        },
+        { 
+          "text": "> LOGIN EXAMPLE", 
+          "type": "externallink", 
+          "target": "LoginExample",
+          "value": "securityLevel",
+          "equals": ["admin"]
+        },
+        { 
+          "text": "> GO TO ESP32 PWM", 
+          "type": "externallink", 
+          "target": "ApiPwmControl",
+          "value": "securityLevel",
+          "equals": ["admin"]
+        },
+        { 
+          "text": "> GO TO YPSILON-14 CONSOLE", 
+          "type": "externallink", 
+          "target": "Ypsilon14",
+          "value": "securityLevel",
+          "equals": ["admin", "guest"]
+        },
+        { "text": "> LOG IN", "type": "links", "target": "login" },
+        {
+          "type": "links",
+          "text": "> Test Dialog",
+          "target": { "target": "airlockError", "type": "dialog" }
+        },
+        { 
+          "text": "> Back to Terminal32", 
+          "type": "externallink", 
+          "target": "Terminal32"
+        }
+      ]
+    },
+    {
+      "id": "uicomponents",
+      "type": "screen",
+      "content": [
+        "UI COMPONENTS",
+        "=========",
+        "String:",
+        "Hello World!",
+        "=========",
+        "Image:",
+        {
+          "type": "image",
+          "src": "IMG_1236.jpg",
+          "width": "150",
+          "height": "150"
+        },
+        "=========",
+        "Alert:",
+        {
+          "type": "alert",
+          "text": "This is an alert message."
+        },
+        "=========",
+        "Input:",
+        {
+          "type": "links",
+          "text": "> input and output system",
+          "target": "inputs"
+        },
+        "=========",
+        "JournalEntry",
+        { 
+          "text": "> GO TO JOURNAL", 
+          "type": "externallink", 
+          "target": "Journal32"
+        }
+      ]
+    },
+    {
+      "id": "beatpage",
+      "type": "screen",
+      "content": [
+        {
+          "type": "beat",
+          "text": "> Beat Machine",
+          "audioUrl": "/audio/beat-120-4-4.wav",
+          "defaultCpm": 120,
+          "audioLatencyCompensationMs": 220
+        },
+        {
+          "type": "CliSSE",
+          "eventName": "event-data"
+        }
+      ]
+    },
+    {
+      "id": "beatradio",
+      "type": "screen",
+      "content": [
+        {
+          "type": "beat",
+          "text": "> Beat radio (one-shot, synced)",
+          "audioUrl": "/audio/01%20DANCE%20WITH%20THE%20POSSUM.m4a",
+          "defaultCpm": 120,
+          "audioLoop": false,
+          "audioLatencyCompensationMs": 0
+        },
+        {
+          "type": "CliSSE",
+          "eventName": "event-data"
+        }
+      ]
+    },
+    {
+      "id": "clipage",
+      "type": "screen",
+      "content": [
+        {
+          "type": "cli",
+          "watch": ["mother-speaks"],
+          "fileSystem": {
+            "C:": {
+              "Programs": {
+                ".sys": {}
+              },
+              "Documents": {}
+            }
+          }
+        },
+        {
+          "type": "CliSSE",
+          "eventName": "event-data"
+        }
+      ]
+    },{
+      "id": "motherPage",
+      "type": "screen",
+      "content": [
+        {
+          "type": "cli",
+          "watch": ["mother-query"],
+          "value": "securityLevel",
+          "equals": ["admin"],
+          "fileSystem": {
+            "C:": {
+              "Programs": {
+                ".sys": {}
+              },
+              "Documents": {}
+            }
+          }
+        },
+        {
+          "type": "CliSSE",
+          "memoryName": "mother",
+          "eventName": "event-data",
+          "eventStyle":{"color": "yellow"},
+          "watch": ["mother-query"]
+        }
+      ]
+    },
+    {
+      "id": "inputs",
+      "type": "screen",
+      "content": [
+        "hello this is inputs",
+        {
+          "type": "input",
+          "memoryName": "foo"
+        },
+        "=========",
+        "Output",
+        {
+          "type": "output",
+          "memoryName": "foo"
+        }
+      ]
+    },
+    {
+      "id": "login",
+      "type": "screen",
+      "content": [
+        "Login",
+        "=========",
+        "",
+        { "text": "Enter Credentials Below", "type": "inline-alert"},
+        "Input username: ",
+        { "memoryName": "username", "type": "input"},
+        "Input password: ",
+        { "memoryName": "password", "type": "input"},
+        {
+          "type": "goif",
+          "against": "users",
+          "values": ["username", "password"],
+          "passCue": "menu",
+          "failCue": "retryLogin",
+          "memoryName": "securityLevel"
+        }
+      ]
+    },
+    {
+      "id": "retryLogin",
+      "type": "screen",
+      "content": [
+        {"text": "Invalid username or password. Please try again.", "type": "inline-alert"},
+        "Use name and password 'guest' if unregistered.",
+        "Input username: ",
+        { "memoryName": "username", "type": "input"},
+        "Input password: ",
+        { "memoryName": "password", "type": "input"},
+        {
+          "type": "goif",
+          "against": "users",
+          "values": ["username", "password"],
+          "passCue": "menu",
+          "failCue": "retryLogin",
+          "memoryName": "securityLevel"
+        }
+        
+      ]
+    }
+  ],
+  "dialogs": [
+    {
+      "id": "lockedDialog",
+      "type": "alert",
+      "content": ["Error! Authorization required."]
+    },
+    {
+      "id": "airlockError",
+      "type": "alert",
+      "content": [
+        "ERROR! Lock override in effect.",
+        "",
+        "Cannot unlock remotely. Manual intervention required."
+      ]
+    }
+  ]
+}

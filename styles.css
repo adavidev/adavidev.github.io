@@ -256,8 +256,8 @@ iframe {
   background: #0a1210;
 }
 
-.project-frame.dark {
-  background: #1a1a1a;
+.project-frame.crt {
+  background: #0f1c0d;
 }
 
 .project-frame iframe {

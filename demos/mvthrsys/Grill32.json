@@ -1,0 +1,80 @@
+{
+  "config": {
+    "name": "Grill32",
+    "styles": {
+      "color": "#a9fe9d",
+      "backgroundColor": "#0f1c0d",
+      "font": "Apricot"
+    },
+    "preloadMemory": {
+      "users": [
+        {"username": "admin", "password": "admin", "securityLevel": "admin"},
+        {"username": "employee", "password": "employee", "securityLevel": "employee"},
+        {"username": "guest", "password": "guest", "securityLevel": "guest"}
+      ]
+    }
+  },
+  "pages": [
+    {
+      "id": "menu",
+      "type": "screen",
+      "content": [
+        "Grill Menu",
+        "=========",
+        "",
+        {
+          "type": "api-toggle",
+          "memoryName": "FanPower",
+          "apiUrl": "/api/set_pin",
+          "apiMethod": "GET",
+          "apiBody": {
+            "pin": 2,
+            "status": "{FanPower}"
+          },
+          "text": "> FAN POWER :: ",
+          "states": [
+            "OFF",
+            "ON"
+          ]
+        },
+        {
+          "type": "api-pwm-slider",
+          "memoryName": "apiPwmDuty",
+          "apiUrl": "/api/set_pwm",
+          "apiMethod": "GET",
+          "value":80,
+          "apiBody": {
+            "pin": 4,
+            "duty": 255
+          },
+          "text": "> SET FAN SPEED :: "
+        },
+        {
+          "type": "output",
+          "memoryName":"apiPwmDuty",
+          "label":"Fan Speed:"
+        },
+        {
+          "type": "CliSSE",
+          "eventName": "fan-data"
+        }
+      ]
+    }
+  ],
+  "dialogs": [
+    {
+      "id": "lockedDialog",
+      "type": "alert",
+      "content": ["Error! Authorization required."]
+    },
+    {
+      "id": "airlockError",
+      "type": "alert",
+      "content": [
+        "ERROR! Lock override in effect.",
+        "",
+        "Cannot unlock remotely. Manual intervention required."
+      ]
+    }
+  ]
+}

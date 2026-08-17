@@ -1,0 +1,200 @@
+{
+  "config": {
+    "name": "Game32",
+    "styles": {
+      "color": "#a9fe9d",
+      "backgroundColor": "#0f1c0d",
+      "font": "Apricot"
+    },
+    "preloadMemory": {
+      "users": [
+        {"username": "admin", "password": "admin", "securityLevel": "admin"},
+        {"username": "employee", "password": "employee", "securityLevel": "employee"},
+        {"username": "guest", "password": "guest", "securityLevel": "guest"}
+      ]
+    }
+  },
+  "pages": [
+    {
+      "id": "menu",
+      "type": "screen",
+      "content": [
+        "Games Menu",
+        "=========",
+        "",
+        {
+          "type": "links",
+          "text": "> Digger",
+          "target": "digger"
+        },
+        {
+          "type": "links",
+          "text": "> Doom",
+          "target": "doom"
+        },
+        {
+          "type": "links",
+          "text": "> The Lost Vikings",
+          "target": "vikings"
+        },
+        {
+          "type": "links",
+          "text": "> Battle Chess",
+          "target": "chess"
+        },
+        {
+          "type": "links",
+          "text": "> Tetris",
+          "target": "tetris"
+        },
+        { 
+          "text": "> Back to Terminal32", 
+          "type": "externallink", 
+          "target": "Terminal32"
+        }
+      ]
+    },
+    {
+      "id": "digger",
+      "type": "screen",
+      "content": [
+        {
+          "type": "loadscript",
+          "src": "js-dos/js-dos.js"
+        },
+        {
+          "type": "loadscript",
+          "src": "js-dos/js-dos.css"
+        },
+        {
+          "type": "loadscript",
+          "src": "bundle.jsdos"
+        },
+        { 
+          "text": "Digger", 
+          "type": "runapp", 
+          "target": "digger"
+        },
+        {
+          "type": "links",
+          "text": "> Back",
+          "target": "menu"
+        }
+      ]
+    },
+    {
+      "id": "doom",
+      "type": "screen",
+      "content": [
+        {
+          "type": "loadscript",
+          "src": "js-dos/js-dos.js"
+        },
+        {
+          "type": "loadscript",
+          "src": "js-dos/js-dos.css"
+        },
+        {
+          "type": "loadscript",
+          "src": "bundle.jsdos"
+        },
+        { 
+          "text": "Doom", 
+          "type": "runapp", 
+          "target": "doom"
+        },
+        {
+          "type": "links",
+          "text": "> Back",
+          "target": "menu"
+        }
+      ]
+    },
+    {
+      "id": "vikings",
+      "type": "screen",
+      "content": [
+        {
+          "type": "loadscript",
+          "src": "js-dos/js-dos.js"
+        },
+        {
+          "type": "loadscript",
+          "src": "js-dos/js-dos.css"
+        },
+        {
+          "type": "loadscript",
+          "src": "bundle.jsdos"
+        },
+        { 
+          "text": "Lost Vikings", 
+          "type": "runapp", 
+          "target": "vikings"
+        },
+        {
+          "type": "links",
+          "text": "> Back",
+          "target": "menu"
+        }
+      ]
+    },
+    {
+      "id": "chess",
+      "type": "screen",
+      "content": [
+        {
+          "type": "loadscript",
+          "src": "js-dos/js-dos.js"
+        },
+        {
+          "type": "loadscript",
+          "src": "js-dos/js-dos.css"
+        },
+        {
+          "type": "loadscript",
+          "src": "bundle.jsdos"
+        },
+        { 
+          "text": "Battle Chess", 
+          "type": "runapp", 
+          "target": "chess"
+        },
+        {
+          "type": "links",
+          "text": "> Back",
+          "target": "menu"
+        }
+      ]
+    },
+    {
+      "id": "tetris",
+      "type": "screen",
+      "content": [
+        {
+          "type": "loadscript",
+          "src": "js-dos/js-dos.js"
+        },
+        {
+          "type": "loadscript",
+          "src": "js-dos/js-dos.css"
+        },
+        {
+          "type": "loadscript",
+          "src": "bundle.jsdos"
+        },
+        { 
+          "text": "Tetris Classic", 
+          "type": "runapp", 
+          "target": "tetris"
+        },
+        {
+          "type": "links",
+          "text": "> Back",
+          "target": "menu"
+        }
+      ]
+    }
+  ],
+  "dialogs": [
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "config": {
+    "name": "ApiPWMToggle",
+    "styles": {
+      "color": "#a9fe9d",
+      "backgroundColor": "#0f1c0d",
+      "font": "Apricot"
+    },
+    "preloadMemory": {
+      "users": [
+        {"username": "admin", "password": "admin", "securityLevel": "admin"},
+        {"username": "employee", "password": "employee", "securityLevel": "employee"},
+        {"username": "guest", "password": "guest", "securityLevel": "guest"}
+      ]
+    }
+  },
+  "pages": [
+    {
+      "id": "menu",
+      "type": "screen",
+      "content": [
+        "Main Menu",
+        "=========",
+        "",
+        {
+          "type": "slider",
+          "memoryName": "testDuty",
+          "value":80,
+          "text": "> TEST SLIDER :: "
+        },
+        {
+          "type": "api-pwm-slider",
+          "memoryName": "apiPwmDuty",
+          "apiUrl": "/api/set_pwm",
+          "apiMethod": "GET",
+          "value":80,
+          "apiBody": {
+            "pin": 4,
+            "duty": 255
+          },
+          "text": "> SET PWM :: "
+        },
+        { 
+          "text": "> EXIT TO TERMINAL32", 
+          "type": "externallink", 
+          "target": "Terminal32"
+        }
+      ]
+    }
+  ],
+  "dialogs": []
+}

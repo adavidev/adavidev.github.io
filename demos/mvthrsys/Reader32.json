@@ -1,0 +1,65 @@
+{
+  "config": {
+    "name": "Movie32",
+    "styles": {
+      "color": "#9dd5fe",
+      "backgroundColor": "#0d0e1c",
+      "font": "Apricot"
+    },
+    "preloadMemory": {
+      "users": [
+        {"username": "admin", "password": "admin", "securityLevel": "admin"},
+        {"username": "employee", "password": "employee", "securityLevel": "employee"},
+        {"username": "guest", "password": "guest", "securityLevel": "guest"}
+      ]
+    }
+  },
+  "pages": [
+    {
+      "id": "menu",
+      "type": "screen",
+      "content": [
+        "Available PDFs",
+        "=========",
+        "",
+        { 
+          "text": "> Hackers Guide", 
+          "type": "links", 
+          "target": "pdf1" 
+        },
+        { 
+          "text": "> Fantasy Notes", 
+          "type": "links", 
+          "target": "pdf2" 
+        },
+        { 
+          "text": "> Back to Terminal32", 
+          "type": "externallink", 
+          "target": "Terminal32"
+        }
+      ]
+    },
+    {
+      "id": "pdf1",
+      "type": "screen",
+      "content": [
+        {
+          "type": "pdfviewer",
+          "target": "Mothership-Hackers-Guide-Color.pdf"
+        }
+      ]
+    },
+    {
+      "id": "pdf2",
+      "type": "screen",
+      "content": [
+        {
+          "type": "pdfviewer",
+          "target": "Sludge Fantasy Notes.pdf"
+        }
+      ]
+    }
+  ],
+  "dialogs": [
+  ]
+}
