@@ -1,0 +1,71 @@
+name: Build demos and deploy Pages
+
+on:
+  push:
+    branches: [master, main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout site
+        uses: actions/checkout@v4
+
+      - name: Checkout walkmode
+        uses: actions/checkout@v4
+        with:
+          repository: adavidev/walkmode
+          path: vendor/walkmode
+
+      - name: Checkout arnauts
+        uses: actions/checkout@v4
+        with:
+          repository: adavidev/arnauts
+          path: vendor/arnauts
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build walkmode
+        working-directory: vendor/walkmode
+        run: |
+          npm ci || npm install
+          npx vite build --base /demos/walkmode/
+
+      - name: Build arnauts
+        working-directory: vendor/arnauts/web
+        run: |
+          npm ci || npm install
+          npx vite build --base /demos/arnauts/
+
+      - name: Assemble site
+        run: |
+          mkdir -p dist/demos
+          cp index.html styles.css dist/
+          cp -R vendor/walkmode/dist dist/demos/walkmode
+          cp -R vendor/arnauts/web/dist dist/demos/arnauts
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
