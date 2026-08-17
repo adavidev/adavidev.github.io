@@ -1,6 +1,6 @@
 ### Hi, I'm Alan
 
-Software since 2012. The work I actually wrote:
+Software since 2011. The work I actually wrote:
 
 **[adavidev.github.io](https://adavidev.github.io)** — live demos:
 

@@ -6,8 +6,8 @@
   --line: rgba(232, 239, 228, 0.14);
   --blaze: #ff5a1f;
   --mint: #c6e8c0;
-  --serif: "Newsreader", "Iowan Old Style", Georgia, serif;
-  --display: "Syne", "Futura", sans-serif;
+  --serif: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --display: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, monospace;
 }
 
@@ -56,11 +56,11 @@ iframe {
 }
 
 .mark {
-  font-family: var(--display);
-  font-weight: 800;
-  letter-spacing: -0.04em;
+  font-family: var(--mono);
+  font-weight: 500;
+  letter-spacing: 0.02em;
   text-decoration: none;
-  font-size: 1.05rem;
+  font-size: 0.85rem;
 }
 
 .top nav {
@@ -84,7 +84,7 @@ iframe {
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  min-height: calc(100svh - 3.4rem);
+  min-height: 0;
   border-bottom: 1px solid var(--line);
 }
 
@@ -117,10 +117,10 @@ iframe {
 .hero h1 {
   margin: 0;
   font-family: var(--display);
-  font-weight: 800;
-  font-size: clamp(2.4rem, 6vw, 4.4rem);
-  line-height: 0.95;
-  letter-spacing: -0.05em;
+  font-weight: 500;
+  font-size: 1.85rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .deck {
@@ -243,9 +243,10 @@ iframe {
 .project-meta h2 {
   margin: 0;
   font-family: var(--display);
-  font-size: clamp(2.2rem, 5vw, 3.6rem);
-  letter-spacing: -0.05em;
-  line-height: 0.9;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
 .project-meta .lede {
