@@ -164,6 +164,30 @@ iframe {
   min-height: 28rem;
 }
 
+.hero-stage.crt-hero {
+  background: #071109;
+  display: flex;
+  align-items: center;
+  padding: 2rem 1.6rem 3rem;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(169, 254, 157, 0.05) 0,
+    rgba(169, 254, 157, 0.05) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+.crt-preview {
+  margin: 0;
+  color: #a9fe9d;
+  font-family: var(--mono);
+  font-size: clamp(0.78rem, 1.6vw, 1.05rem);
+  line-height: 1.55;
+  text-shadow: 0 0 8px rgba(169, 254, 157, 0.45);
+  white-space: pre;
+}
+
 .topo {
   width: 100%;
   height: 100%;

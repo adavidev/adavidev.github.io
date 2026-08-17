@@ -6,7 +6,7 @@
     <title>Alan Davis — adavidev</title>
     <meta
       name="description"
-      content="Alan Davis. Walkmode, Arnauts, and MVTHRSYS — live in the browser."
+      content="Alan Davis. MVTHRSYS, Arnauts, Walkmode — live in the browser."
     />
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,9 +21,9 @@
     <header class="top">
       <a class="mark" href="./">adavidev</a>
       <nav>
-        <a href="#walkmode">Walkmode</a>
-        <a href="#arnauts">Arnauts</a>
         <a href="#mvthrsys">MVTHRSYS</a>
+        <a href="#arnauts">Arnauts</a>
+        <a href="#walkmode">Walkmode</a>
         <a href="https://github.com/adavidev">GitHub</a>
       </nav>
     </header>
@@ -31,67 +31,55 @@
     <section class="hero">
       <div class="hero-copy">
         <p class="eyebrow">Alan Davis · since 2012</p>
-        <h1>Things you can walk.<br />Things you can crew.<br />Things you can boot.</h1>
+        <h1>I write the machine.<br />Then I crew it.</h1>
         <p class="deck">
-          Three browser demos. Hill-aware walking routes. A ship with a crew
-          that pathfinds. And MVTHRSYS — a JSON-driven terminal UI with the
-          shipped Examples page.
+          MVTHRSYS is mine — JSON screens, a CRT runtime, the Examples
+          terminal. Next is Arnauts, the ship I ported into the browser.
+          Walkmode is the map experiment after that.
         </p>
         <div class="hero-actions">
-          <a class="btn" href="#walkmode">See the work</a>
+          <a class="btn" href="#mvthrsys">See the work</a>
           <a class="btn ghost" href="https://github.com/adavidev">Source on GitHub</a>
         </div>
       </div>
-      <div class="hero-stage" aria-hidden="true">
-        <svg class="topo" viewBox="0 0 640 720" preserveAspectRatio="xMidYMid slice">
-          <defs>
-            <linearGradient id="hill" x1="0" y1="1" x2="0" y2="0">
-              <stop offset="0" stop-color="#0d1f18" />
-              <stop offset="1" stop-color="#3a6b4a" />
-            </linearGradient>
-          </defs>
-          <rect width="640" height="720" fill="url(#hill)" />
-          <g fill="none" stroke="#d7c49a" stroke-linecap="round">
-            <path d="M-20 680 C 80 640 140 600 220 610 S 380 700 480 640 660 560 680 580" stroke-width="1.2" opacity=".9" />
-            <path d="M-20 620 C 90 570 170 540 250 560 S 410 660 510 590 660 500 680 520" stroke-width="1.1" opacity=".75" />
-            <path d="M-20 560 C 100 500 190 470 280 500 S 430 610 530 530 660 430 680 450" stroke-width="1.2" opacity=".7" />
-            <path d="M20 490 C 140 430 230 390 330 430 S 470 540 560 450 680 350 700 370" stroke-width="1.4" opacity=".85" />
-            <path d="M60 420 C 170 350 270 310 370 360 S 510 470 590 370 700 270 720 290" stroke-width="1.6" />
-            <path d="M110 340 C 220 270 320 230 420 290 S 560 390 630 290 740 190 760 210" stroke-width="1.8" />
-            <path d="M180 260 C 290 190 380 160 470 220 S 600 310 660 220 760 120 790 140" stroke-width="2.1" />
-            <path d="M260 180 C 360 120 450 100 530 160 S 640 240 700 150 790 70 820 90" stroke-width="2.4" />
-            <path d="M340 110 C 430 60 510 50 580 110 S 680 170 730 90 800 20 840 40" stroke-width="1.6" opacity=".6" />
-          </g>
-          <circle cx="418" cy="248" r="5" fill="#ff5a1f" />
-          <circle cx="418" cy="248" r="14" fill="none" stroke="#ff5a1f" stroke-width="1.2" opacity=".7" />
-          <path d="M418 248 C 390 310 360 360 310 410 250 470 210 520 190 560" fill="none" stroke="#ff5a1f" stroke-width="2.4" stroke-dasharray="7 6" />
-          <circle cx="190" cy="560" r="5" fill="#e8f3e4" />
-        </svg>
-        <p class="hero-caption">Walkmode · contour, don’t climb</p>
+      <div class="hero-stage crt-hero" aria-hidden="true">
+        <pre class="crt-preview">MVTHRSYS
+=========
+
+> UI COMPONENTS
+> GRILL32
+> VR EXAMPLES
+> MOVIES
+> GAMES
+> MUSIC
+> BEATS
+> CliSSE
+
+_</pre>
+        <p class="hero-caption">MVTHRSYS · Examples.json</p>
       </div>
     </section>
 
-    <article class="project" id="walkmode">
+    <article class="project" id="mvthrsys">
       <div class="project-meta">
         <p class="index">01</p>
-        <h2>Walkmode</h2>
+        <h2>MVTHRSYS</h2>
         <p class="lede">
-          Click start, then end. It builds a walkability grid from Terrarium
-          elevation tiles and OSM water, then A* with an uphill penalty finds a
-          path that goes around the hill instead of over it.
+          Almost entirely written by me. A JSON-driven terminal: typed blocks,
+          controls, CLI, SSE, beats. Screens are data. This is the shipped
+          Examples page running in the browser.
         </p>
         <ul>
-          <li>React 19 · Vite · MapLibre</li>
-          <li>Client-side DEM + Overpass</li>
-          <li>No backend</li>
+          <li>React · Redux · webpack</li>
+          <li>Private source · public client</li>
+          <li>Starts on Examples.json</li>
         </ul>
-        <a class="btn" href="./demos/walkmode/">Open live demo</a>
-        <a class="text-link" href="https://github.com/adavidev/walkmode">github.com/adavidev/walkmode</a>
+        <a class="btn" href="./demos/mvthrsys/">Open Examples</a>
       </div>
-      <div class="project-frame">
+      <div class="project-frame crt">
         <iframe
-          title="Walkmode live demo"
-          src="./demos/walkmode/"
+          title="MVTHRSYS Examples"
+          src="./demos/mvthrsys/"
           loading="eager"
         ></iframe>
       </div>
@@ -102,8 +90,8 @@
         <p class="index">02</p>
         <h2>Arnauts</h2>
         <p class="lede">
-          A ship made of hull and corridor tiles. Crew pathfinds with A*.
-          Originally libGDX/Java; this is the Phaser port, running in the
+          After MVTHRSYS. A ship of hull and corridor tiles, crew on A*.
+          Originally libGDX/Java; this is my Phaser port, playable in the
           browser.
         </p>
         <ul>
@@ -123,26 +111,27 @@
       </div>
     </article>
 
-    <article class="project" id="mvthrsys">
+    <article class="project" id="walkmode">
       <div class="project-meta">
         <p class="index">03</p>
-        <h2>MVTHRSYS</h2>
+        <h2>Walkmode</h2>
         <p class="lede">
-          JSON-driven terminal UI. This is the shipped Examples screen: CRT
-          stack of typed blocks, links out to Grill32 / VR / movies / games /
-          beats. Private source; this is the public client.
+          Click start, then end. A walkability grid from Terrarium elevation
+          and OSM water; A* with an uphill penalty goes around the hill
+          instead of over it.
         </p>
         <ul>
-          <li>React · Redux · webpack</li>
-          <li>Screens are JSON, not hardcoded pages</li>
-          <li>Starts on Examples.json</li>
+          <li>React 19 · Vite · MapLibre</li>
+          <li>Client-side DEM + Overpass</li>
+          <li>No backend</li>
         </ul>
-        <a class="btn" href="./demos/mvthrsys/">Open Examples</a>
+        <a class="btn" href="./demos/walkmode/">Open live demo</a>
+        <a class="text-link" href="https://github.com/adavidev/walkmode">github.com/adavidev/walkmode</a>
       </div>
-      <div class="project-frame crt">
+      <div class="project-frame">
         <iframe
-          title="MVTHRSYS Examples"
-          src="./demos/mvthrsys/"
+          title="Walkmode live demo"
+          src="./demos/walkmode/"
           loading="lazy"
         ></iframe>
       </div>

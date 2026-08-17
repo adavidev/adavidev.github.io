@@ -1,8 +1,9 @@
 ### Hi, I'm Alan
 
-Software since 2012. Lately: TypeScript, maps, and small simulations that run in the browser.
+Software since 2012. The work I actually wrote:
 
 **[adavidev.github.io](https://adavidev.github.io)** — live demos:
 
-- [Walkmode](https://adavidev.github.io/demos/walkmode/) — walkable routes that contour around hills
+- [MVTHRSYS](https://adavidev.github.io/demos/mvthrsys/) — JSON-driven terminal UI (almost entirely mine)
 - [Arnauts](https://adavidev.github.io/demos/arnauts/) — crew a little ship, in the browser
+- [Walkmode](https://adavidev.github.io/demos/walkmode/) — walkable routes that contour around hills
