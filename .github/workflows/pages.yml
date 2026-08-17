@@ -3,10 +3,12 @@ name: Build demos and deploy Pages
 on:
   push:
     branches: [master, main]
+  repository_dispatch:
+    types: [walkmode-updated, rebuild-demos]
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -46,15 +48,32 @@ jobs:
       - name: Build arnauts
         working-directory: vendor/arnauts/web
         run: |
-          npm ci || npm install
+          rm -rf node_modules
+          npm install
           npx vite build --base /demos/arnauts/
 
-      - name: Assemble site
+      - name: Publish demos to master
+        run: |
+          rm -rf demos/walkmode demos/arnauts
+          cp -R vendor/walkmode/dist demos/walkmode
+          cp -R vendor/arnauts/web/dist demos/arnauts
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add demos/walkmode demos/arnauts
+          if git diff --staged --quiet; then
+            echo "Demos unchanged."
+          else
+            git commit -m "Rebuild demos from CI."
+            git push
+          fi
+
+      - name: Assemble Pages artifact
         run: |
           mkdir -p dist/demos
-          cp index.html styles.css dist/
-          cp -R vendor/walkmode/dist dist/demos/walkmode
-          cp -R vendor/arnauts/web/dist dist/demos/arnauts
+          cp index.html styles.css favicon.svg dist/ 2>/dev/null || cp index.html styles.css dist/
+          cp -R demos/mvthrsys dist/demos/mvthrsys
+          cp -R demos/walkmode dist/demos/walkmode
+          cp -R demos/arnauts dist/demos/arnauts
 
       - uses: actions/upload-pages-artifact@v3
         with:

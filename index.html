@@ -118,7 +118,8 @@ _</pre>
           Walking directions that ignore the road network. Given two points,
           it samples elevation and OSM water/buildings into a local grid, then
           runs A* with an asymmetric uphill cost so the path contours hills
-          and prefers going around buildings. Drop keep-away pins with a
+          and prefers going around buildings. Multi-lane roads and freeways
+          are crossable only at OSM crosswalks. Drop keep-away pins with a
           radius; they persist in the browser. A slider scales the hill
           penalty and re-routes on the same grid.
         </p>
