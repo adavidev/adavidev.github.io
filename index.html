@@ -6,7 +6,7 @@
     <title>Alan Davis — adavidev</title>
     <meta
       name="description"
-      content="Alan Davis. MVTHRSYS, Arnauts, Walkmode — live in the browser."
+      content="Alan Davis. MVTHRSYS, Arnauts, Walkmode."
     />
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -32,12 +32,8 @@
       <div class="hero-copy">
         <p class="eyebrow">Software since 2011</p>
         <h1>Alan Davis</h1>
-        <p class="deck">
-          JSON-driven terminal UI, a browser ship sim, and elevation-aware
-          walking routes.
-        </p>
         <div class="hero-actions">
-          <a class="btn" href="#mvthrsys">Demos</a>
+          <a class="btn" href="#mvthrsys">Work</a>
           <a class="btn ghost" href="https://github.com/adavidev">GitHub</a>
         </div>
       </div>
@@ -64,14 +60,19 @@ _</pre>
         <p class="index">01</p>
         <h2>MVTHRSYS</h2>
         <p class="lede">
-          JSON-driven terminal: typed blocks, controls, CLI, SSE, and beats.
-          Screens are data. This build loads the Examples configuration.
+          A terminal runtime for device UIs. Each screen is a JSON document:
+          typed blocks map to React components (text, links, GPIO/PWM
+          controls, CLI, SSE). The same client talks to an ESP32 or a local
+          API mirror. Controls bind to named HTTP actions; pin and PWM state
+          sync over Server-Sent Events. The shell can list files, publish
+          events, and call those actions. This page is the Examples
+          configuration: UI kit, hardware terminals, VR, games, audio, and a
+          synced beat clock.
         </p>
         <ul>
-          <li>React · Redux · webpack</li>
-          <li>Examples.json</li>
+          <li>React, Redux, webpack</li>
         </ul>
-        <a class="btn" href="./demos/mvthrsys/">Open Examples</a>
+        <a class="btn" href="./demos/mvthrsys/">Open</a>
       </div>
       <div class="project-frame crt">
         <iframe
@@ -87,15 +88,17 @@ _</pre>
         <p class="index">02</p>
         <h2>Arnauts</h2>
         <p class="lede">
-          Hull and corridor tiles with crew pathfinding. libGDX/Java original,
-          Phaser port in the browser.
+          A ship is a graph of hull and corridor tiles. Crew members run A*
+          on that graph: they walk corridors, climb ladders, and occupy
+          rooms. Placing a corridor tile extends the walkable topology.
+          Rotating the ship remaps coordinates; the AI keeps using the same
+          logical layout. Originally a libGDX desktop game; this build is
+          the Phaser 3 port.
         </p>
         <ul>
-          <li>Click empty cells to place corridor</li>
-          <li>L drops a ladder · Q / E rotate the ship</li>
-          <li>Arrows pan</li>
+          <li>Phaser 3, TypeScript, Vite</li>
         </ul>
-        <a class="btn" href="./demos/arnauts/">Open live demo</a>
+        <a class="btn" href="./demos/arnauts/">Open</a>
         <a class="text-link" href="https://github.com/adavidev/arnauts">github.com/adavidev/arnauts</a>
       </div>
       <div class="project-frame dark">
@@ -112,16 +115,16 @@ _</pre>
         <p class="index">03</p>
         <h2>Walkmode</h2>
         <p class="lede">
-          Click start, then end. A walkability grid from Terrarium elevation
-          and OSM water; A* with an uphill penalty goes around the hill
-          instead of over it.
+          Walking directions that ignore the road network. Given two points,
+          it samples Mapzen Terrarium elevation tiles and OSM water into a
+          local grid, then runs A* with an asymmetric uphill cost so the
+          path contours around hills instead of climbing them. A slider
+          scales that penalty and re-routes on the same grid.
         </p>
         <ul>
-          <li>React 19 · Vite · MapLibre</li>
-          <li>Client-side DEM + Overpass</li>
-          <li>No backend</li>
+          <li>React, MapLibre, Vite</li>
         </ul>
-        <a class="btn" href="./demos/walkmode/">Open live demo</a>
+        <a class="btn" href="./demos/walkmode/">Open</a>
         <a class="text-link" href="https://github.com/adavidev/walkmode">github.com/adavidev/walkmode</a>
       </div>
       <div class="project-frame">
@@ -135,7 +138,6 @@ _</pre>
 
     <footer class="foot">
       <p>Alan Davis · <a href="https://github.com/adavidev">adavidev</a> · software since 2011</p>
-      <p class="mute">Static site on GitHub Pages. Demos are the real builds.</p>
     </footer>
   </body>
 </html>
