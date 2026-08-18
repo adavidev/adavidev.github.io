@@ -72,6 +72,7 @@ jobs:
         run: |
           mkdir -p dist/demos
           cp index.html styles.css favicon.svg dist/ 2>/dev/null || cp index.html styles.css dist/
+          cp -R studio dist/studio
           cp -R demos/mvthrsys dist/demos/mvthrsys
           cp -R demos/walkmode dist/demos/walkmode
           cp -R demos/arnauts dist/demos/arnauts
