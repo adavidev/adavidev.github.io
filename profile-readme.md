@@ -1,6 +1,6 @@
 ### Hi, I'm Alan
 
-Software since 2011.
+Software since 2011. Hardware since 2024.
 
 **[adavidev.github.io](https://adavidev.github.io)**
 
