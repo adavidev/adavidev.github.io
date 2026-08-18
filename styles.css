@@ -270,12 +270,6 @@ iframe {
   color: var(--blaze);
 }
 
-.related-title {
-  margin: 1.6rem 0 0;
-  font-size: 1.05rem;
-  font-weight: 600;
-}
-
 .text-link {
   color: var(--mute);
   font-size: 0.72rem;
@@ -296,6 +290,37 @@ iframe {
   height: 100%;
   min-height: 32rem;
   border: 0;
+}
+
+.project-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 32rem;
+  padding: 2rem;
+  text-align: center;
+  font-family: var(--mono);
+}
+
+.project-placeholder p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--paper);
+}
+
+.project-placeholder-sub {
+  margin-top: 1.5rem !important;
+  padding: 1rem 1.25rem;
+  background: #fff;
+  color: #0a0814 !important;
+  border-radius: 12px;
+  font-size: 0.85rem !important;
+  min-width: 12rem;
+  min-height: 12rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .foot {
