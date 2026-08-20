@@ -71,7 +71,7 @@ jobs:
       - name: Assemble Pages artifact
         run: |
           mkdir -p dist/demos
-          cp index.html styles.css favicon.svg dist/ 2>/dev/null || cp index.html styles.css dist/
+          cp index.html styles.css favicon.svg CNAME dist/ 2>/dev/null || cp index.html styles.css CNAME dist/
           cp -R studio dist/studio
           cp -R demos/mvthrsys dist/demos/mvthrsys
           cp -R demos/walkmode dist/demos/walkmode
